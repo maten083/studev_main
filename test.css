@@ -1,0 +1,165 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Poppins:wght@500&display=swap');
+
+
+body {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f2f5f7;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.post {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  max-width: 400px;
+  position: relative;
+  padding: 2rem;
+  box-shadow: inset 0 0 0 4px #000, inset -4px -4px 0 6px #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+.post:before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform-origin: 0 bottom 0;
+  transform: scaleY(0);
+  transition: 0.4s ease-out;
+}
+.post:hover .post-title {
+  color: #fff;
+}
+.post:hover:before {
+  transform: scaleY(1);
+}
+
+.post-title {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.333;
+  transition: 0.4s ease-out;
+}
+
+.navbar.center .navbar-inner {
+  text-align: center;
+}
+
+.navbar.center .navbar-inner .nav {
+  display:inline-block;
+  float: none;
+}
+
+.scrolled-down{
+  transform:translateY(-100%); transition: all 0.3s ease-in-out;
+}
+.scrolled-up{
+  transform:translateY(0); transition: all 0.3s ease-in-out;
+}
+/* ----------------MENU BUTTON-------------*/
+
+.navbar-dark .navbar-toggler{
+  border: none !important;
+  outline: none!important;
+  
+}
+
+  .menu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+  }
+  .line {
+    fill: none;
+    stroke: white;
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
+  .line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+  }
+  .line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
+  .opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+  }
+  .opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 6;
+  }
+  .opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+  }
+
+
+  /* ----------------UNDERLINE HOVERS-------------*/
+  a {
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .nav-link:hover::after,
+  .nav-link:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+  }
+
+  .nav-link::after {
+   
+    transform: scale(0);
+    transform-origin: center;
+  }
+  
+  .nav-link:hover::after,
+  .nav-link:focus::after{
+    transform: scale(1);
+  }
+
+  
